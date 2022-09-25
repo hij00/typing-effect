@@ -1,0 +1,83 @@
+/* h1 {
+  text-transform: capitalize;
+  white-space: nowrap;
+  color: transparent;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+h1::before {
+  content: "Typing Effect Using Only CSS!!";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: aqua;
+  overflow: hidden;
+  border-right: 3px solid white;
+  animation: typing 8s steps(26) infinite;
+}
+
+@keyframes typing {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+} */
+/* =====================css로만 타이핑 효과 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: darkslateblue;
+}
+
+.wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+
+.lg-text {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.sm-text {
+  font-size: 1.5rem;
+}
+
+#dynamic {
+  position: relative;
+  display: inline-block;
+  /* text가 딱 끝날때 커서 수정됨 */
+}
+
+#dynamic::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: -10px;
+  width: 4px;
+  height: 100%;
+  background-color: white;
+}
+
+/* js */
+#dynamic.active::after {
+  display: none;
+}
